@@ -1,1 +1,22 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css";
+
+.title {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    padding: 20px;
+    color: white;
+}
+
+.buttons {
+    flex-wrap: wrap;
+}
+
+.gain {
+    box-sizing: ;
+}
+
+.lose {
+    position: relative;
+    top: -45px;
+}
