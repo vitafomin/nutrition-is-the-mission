@@ -7,10 +7,10 @@ var gainAge = $(".gain-age")
 var gainGender = $(".gain-gender")
 var gainSubmit = $(".btn-gain")
 var gainBmi = $(".gain-bmi")
-
-
-
-
+var gainWeightValue = $(".wei-value")
+var gainHeightValue = $(".hei-value")
+var gainAgeValue = $(".age-value")
+var gainGenderValue = $(".gen-value")
 
 
 
