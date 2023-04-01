@@ -17,19 +17,20 @@ body {
 .buttons {
     display: flex;
     align-items: stretch;
-    height: 100%;
+    height: 65%;
     justify-content: space-around;
 }
 
 
-.lose {
+
+/*.lose {
     position: relative;
     top: -45px;
-}
+}*/
 
 
 
 .buttons button {
-    flex: 0 1 49%;
+    flex: 0 1 95%;
 }
 
