@@ -27,10 +27,6 @@ var gainGenderValue = $(".gen-value")
 
 
 
-
-
-
-
 var loseHeader = $(".lose-header")
 var loseInfo = $(".lose-info")
 var loseInput = $(".lose-input")
@@ -41,6 +37,7 @@ var loseAge = $(".lose-age")
 var loseGender = $(".lose-gender")
 var btnBtnPrimary = $(".btn btn-primary")
 var loseBmi = $(".lose-bmi")
-
-
-
+var weiInput = $(".wei-input")
+var heiInputFormControl = $(".hei-input form-control")
+var ageInputFormControl = $(".age-input form-control")
+var genInputFormControl = $(".gen-input form-control")
