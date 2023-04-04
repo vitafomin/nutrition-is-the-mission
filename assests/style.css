@@ -34,5 +34,7 @@ body {
     flex: 0 1 95%;
 }
 
-
+img {
+    margin: 5px;
+}
 

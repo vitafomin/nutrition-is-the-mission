@@ -1,14 +1,17 @@
 var gainHead = $(".gain-head")
 var gainInfo = $(".gain-info")
 var gainInput = $(".gain-input")
-var gainGender = $(".gain-gender")
+var gainName = $(".gain-gender")
 var gainSubmit = $(".btn-gain")
 var gainBmiEl = $(".gain-bmi")
 var gainWeightEl = $(".wei-value")
 var gainHeightEl = $(".hei-value")
 var gainAgeEl = $(".age-value")
-var gainGenderEl = $(".gen-value")
+var gainGenderEl = $(".name-value")
 var healthyBmiEl = $(".healthy-bmi")
+var recipes = $(".recipes")
+var recipeHead = $(".recipes-header")
+
 
 function gainBmi(event, age, weight, height) {
     event.preventDefault();
@@ -32,6 +35,8 @@ function gainBmi(event, age, weight, height) {
         console.log(data);
         var bmiData = data.data;
         console.log(bmiData)
+
+
 
         gainBmiEl.text("Your BMI is " + bmiData.bmi + ", your health class is considered " + bmiData.health);
         healthyBmiEl.text("Healthy BMI Range is " + bmiData.healthy_bmi_range) 
@@ -57,7 +62,26 @@ function gainRecipes() {
     })
     .then(function (data) {
         console.log(data);
+        console.log(data.hits)
+
+        recipeHead.text("Here are some recipes we recomend for you nutrition goals")
+
+        for (var i = 0; i < data.hits.length; i++){
+            var linkEl = $("<a>")
+            linkEl.attr("href", data.hits[i].recipe.url).text("recipe " + [i]);
+            var recipeList = $("<li>")
+            recipeList.append(linkEl)
+            recipes.append(recipeList);
+
+
+            // imgEl.src = data.hits[i].recipe.image;
+            // recipes.append(imgEl);
+        }
+
+        // + data.hits[i].recipe.url;
+
     })
+
 
 
 
