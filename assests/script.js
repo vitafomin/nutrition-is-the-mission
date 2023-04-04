@@ -8,6 +8,7 @@ var gainWeightEl = $(".wei-value")
 var gainHeightEl = $(".hei-value")
 var gainAgeEl = $(".age-value")
 var gainGenderEl = $(".gen-value")
+var healthyBmiEl = $(".healthy-bmi")
 
 function gainBmi(event, age, weight, height) {
     event.preventDefault();
@@ -33,14 +34,38 @@ function gainBmi(event, age, weight, height) {
         console.log(bmiData)
 
         gainBmiEl.text("Your BMI is " + bmiData.bmi + ", your health class is considered " + bmiData.health);
+        healthyBmiEl.text("Healthy BMI Range is " + bmiData.healthy_bmi_range) 
 
     });
-
-
-
-    
-    
+     
 }
+
+function gainRecipes() {
+    var options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '3eb722f518mshee8759df28c4085p1c9e92jsnfda40a8170a9',
+            'X-RapidAPI-Host': 'edamam-recipe-search.p.rapidapi.com'
+        }
+    }    
+
+    var recipeUrl = ("https://edamam-recipe-search.p.rapidapi.com/search?q=beef");
+
+    fetch(recipeUrl, options)
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (data) {
+        console.log(data);
+    })
+
+
+
+}
+
+
+
+
 
 gainSubmit.on("click", function(event) {
     event.preventDefault();
@@ -48,6 +73,7 @@ gainSubmit.on("click", function(event) {
     console.log(gainAgeEl.val())
     console.log(gainWeightEl.val())
     console.log(gainHeightEl.val())
+    gainRecipes()
 })
 
 
