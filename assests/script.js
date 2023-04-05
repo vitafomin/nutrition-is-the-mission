@@ -44,32 +44,34 @@ function gainBmi(event, age, weight, height) {
         gainBmiEl.text("Your BMI is " + bmiData.bmi + ", your health class is considered " + bmiData.health);
         healthyBmiEl.text("Healthy BMI Range is " + bmiData.healthy_bmi_range) 
 
-        // var user = {
-        //     name: gainNameEl.value,
-        //     bodyInfo: bmiData.bmi
-        // }
-        // var name = JSON.parse(localStorage.getItem("user"))
-        // name.push(user);
+        
+        if (gainNameEl.val() != "") {
+            var userArr = JSON.parse(localStorage.getItem("gainUsers")) || [];
 
-        // localStorage.setItem("user", JSON.stringify(name))
-
-
-    });
-     
+            var user = {
+                name: gainNameEl.val(),
+                bodyInfo: bmiData.bmi
+            }
+            userArr.push(user);
+        
+            localStorage.setItem("gainUsers", JSON.stringify(userArr))
+            diplayGainBmi();
+        }
+    }); 
 }
 
-// function diplayBmi() {
-//     var name = JSON.parse(localStorage.getItem("user"));
+function diplayGainBmi() {
+    var userArr = JSON.parse(localStorage.getItem("gainUsers"));
 
-//     for (var i = 0; i < name.length; i++) {
-//         var liEl = ("<li>")
-//         liEl.attr("class", "user-info")
+    navGainEl.empty();
 
-//         liEl.text(name[i].name + " - " + name[i].bodyInfo);
-
-//         navGainEl.append(liEl);
-//     }
-// }
+    for (var i = 0; i < userArr.length; i++) {
+        var liEl = $("<li>");
+        liEl.attr("class", "user-info")
+        liEl.text(userArr[i].name + " - " + userArr[i].bodyInfo);
+        navGainEl.append(liEl);
+    }
+}
 
 function gainRecipes() {
     var options = {
@@ -146,6 +148,7 @@ var loseWeightEl = $(".wei-input")
 var loseHeightEl = $(".hei-input")
 var loseAgeEl = $(".age-input")
 var loseNameEl = $(".name-input")
+var navLoseEl = $(".nav-lose")
 
 
 function loseBmi (event, age, weight, height) {
@@ -171,12 +174,38 @@ function loseBmi (event, age, weight, height) {
         var bmiData = data.data;
         console.log(bmiData)
         
-        gainBmiEl.text("Your BMI is " + bmiData.bmi + ", your health class is considered " + bmiData.health);
+        loseBmiEl.text("Your BMI is " + bmiData.bmi + ", your health class is considered " + bmiData.health);
         healthyBmiEl.text("Healthy BMI Range is " + bmiData.healthy_bmi_range) 
+
+        if (loseNameEl.val() != "") {
+            var userArr = JSON.parse(localStorage.getItem("loseUsers")) || [];
+
+            var user = {
+                name: loseNameEl.val(),
+                bodyInfo: bmiData.bmi
+            }
+            userArr.push(user);
+        
+            localStorage.setItem("loseUsers", JSON.stringify(userArr))
+            diplayLoseBmi();
+        }
         
         
     })
     
+}
+
+function diplayLoseBmi() {
+    var userArr = JSON.parse(localStorage.getItem("loseUsers"));
+
+    navLoseEl.empty();
+
+    for (var i = 0; i < userArr.length; i++) {
+        var liEl = $("<li>");
+        liEl.attr("class", "user-info")
+        liEl.text(userArr[i].name + " - " + userArr[i].bodyInfo);
+        navLoseEl.append(liEl);
+    }
 }
 
 function loseRecipes() {
