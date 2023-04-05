@@ -34,7 +34,11 @@ body {
     flex: 0 1 95%;
 }
 
-img {
-    margin: 5px;
+.title2 {
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    padding: 20px;
+    color: white;
 }
 
