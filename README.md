@@ -18,6 +18,7 @@ This application is a great tool for anyone! Whether you are trying to kick-star
 ## Credits
 
 Sean Zweifel
+https://github.com/spzweifel
 
 Terrell Anderson 
 
