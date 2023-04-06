@@ -38,3 +38,59 @@ img {
     margin: 5px;
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.title3{
+    display: flex;
+    justify-content: center;
+    background-color: blue;
+    padding: 20px;
+    color: white;
+}
+
+btn{
+    display: flex;
+    justify-content: center;
+}
+
+
+.buttons button {
+    flex: 0 1 95%;
+}
+
+img {
+    margin: 5px;
+}
