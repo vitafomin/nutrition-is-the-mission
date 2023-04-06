@@ -23,6 +23,8 @@ Terrell Anderson
 
 Michael McGhee
 
+Vita Fomin
+https://github.com/vitafomin
 
 ## License
 
