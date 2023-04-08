@@ -27,7 +27,7 @@ function gainBmi(event, age, weight, height) {
         }
     };
 
-    var bmiUrl = ("https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&weight=" + weight + "&height=" + height);
+    var bmiUrl = ("https://cors-anywhere.herokuapp.com/https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&weight=" + weight + "&height=" + height);
 
     console.log(bmiUrl);
     fetch(bmiUrl, options)
@@ -82,7 +82,7 @@ function gainRecipes() {
         }
     }    
 
-    var recipeUrl = ("https://edamam-recipe-search.p.rapidapi.com/search?q=beef");
+    var recipeUrl = ("https://cors-anywhere.herokuapp.com/https://edamam-recipe-search.p.rapidapi.com/search?q=beef");
 
     fetch(recipeUrl, options)
     .then(function (response) {
@@ -94,10 +94,13 @@ function gainRecipes() {
 
         recipeHead.text("Here are some recipes we recomend for you nutrition goals")
 
+        recipes.empty();
+
         for (var i = 0; i < data.hits.length; i++){
             var linkEl = $("<a>")
             linkEl.attr("href", data.hits[i].recipe.url).text("recipe " + [i]);
-            var recipeList = $("<li>")
+            var recipeList = $("<button>")
+            recipeList.attr("class", "button is-dark is-rounded")
             recipeList.append(linkEl)
             recipes.append(recipeList);
 
@@ -125,6 +128,8 @@ gainSubmit.on("click", function(event) {
     console.log(gainHeightEl.val())
     gainRecipes()
 })
+
+diplayGainBmi();
 
 
 
@@ -162,7 +167,7 @@ function loseBmi (event, age, weight, height) {
         }
     };
     
-    var bmiUrl = ("https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&weight=" + weight + "&height=" + height);
+    var bmiUrl = ("https://cors-anywhere.herokuapp.com/https://fitness-calculator.p.rapidapi.com/bmi?age=" + age + "&weight=" + weight + "&height=" + height);
     
     console.log(bmiUrl);
     fetch(bmiUrl, options)
@@ -217,7 +222,7 @@ function loseRecipes() {
         }
     }    
     
-    var recipeUrl = ("https://edamam-recipe-search.p.rapidapi.com/search?q=keto");
+    var recipeUrl = ("https://cors-anywhere.herokuapp.com/https://edamam-recipe-search.p.rapidapi.com/search?q=keto");
     
     fetch(recipeUrl, options)
     .then(function (response) {
@@ -228,11 +233,14 @@ function loseRecipes() {
         console.log(data.hits)
         
         recipeHead.text("Here are some recipes we recomend for you nutrition goals")
+
+        recipes.empty();
         
         for (var i = 0; i < data.hits.length; i++){
             var linkEl = $("<a>")
             linkEl.attr("href", data.hits[i].recipe.url).text("recipe " + [i]);
-            var recipeList = $("<li>")
+            var recipeList = $("<button>")
+            recipeList.attr("class", "button is-dark is-rounded")
             recipeList.append(linkEl)
             recipes.append(recipeList);
             
@@ -248,3 +256,5 @@ loseSubmit.on("click", function(event) {
     loseBmi(event, loseAgeEl.val().trim(), loseWeightEl.val().trim(), loseHeightEl.val().trim())
     loseRecipes()
 })
+
+diplayLoseBmi();
