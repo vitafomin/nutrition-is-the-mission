@@ -93,6 +93,7 @@ function gainRecipes() {
         console.log(data.hits)
 
         recipeHead.text("Here are some recipes we recomend for you nutrition goals")
+       
 
         recipes.empty();
 
@@ -103,9 +104,8 @@ function gainRecipes() {
             recipeList.attr("class", "button is-dark is-rounded")
             recipeList.append(linkEl)
             recipes.append(recipeList);
-
-
         }
+        
 
         statement.text("This mission is in YOUR hands")
 
