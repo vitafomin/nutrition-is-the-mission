@@ -11,8 +11,17 @@
 }
 
 body {
-    height: 100vh;
+    height: 120vh;
     background-color: rgb(211, 212, 222);
+}
+
+.user-info {
+    margin-left: 10px;
+}
+
+.button {
+    margin: 8px;
+
 }
 
 .buttons {
@@ -39,9 +48,17 @@ img {
     margin: 5px;
 }
 
+.statement {
+    font-size: xx-large;
+    color: black;
+}
 
+.main-content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 300px;
 
-
+}
 
 
 
