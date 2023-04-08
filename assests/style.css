@@ -53,7 +53,12 @@ img {
     color: black;
 }
 
+.main-content {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 300px;
 
+}
 
 
 

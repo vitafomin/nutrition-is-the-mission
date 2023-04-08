@@ -129,6 +129,8 @@ gainSubmit.on("click", function(event) {
     gainRecipes()
 })
 
+diplayGainBmi();
+
 
 
 
@@ -254,3 +256,5 @@ loseSubmit.on("click", function(event) {
     loseBmi(event, loseAgeEl.val().trim(), loseWeightEl.val().trim(), loseHeightEl.val().trim())
     loseRecipes()
 })
+
+diplayLoseBmi();
