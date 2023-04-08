@@ -13,6 +13,7 @@
 body {
     height: 120vh;
     background-color: rgb(211, 212, 222);
+    color: black;
 }
 
 .user-info {
