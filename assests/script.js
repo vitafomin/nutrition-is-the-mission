@@ -1,7 +1,3 @@
-var gainHead = $(".gain-header")
-var gainInfo = $(".gain-info")
-var gainInput = $(".gain-input")
-var gainName = $(".gain-name")
 var gainSubmit = $(".btn-gain")
 var gainBmiEl = $(".gain-bmi")
 var gainWeightEl = $(".wei-value")
@@ -13,8 +9,13 @@ var recipes = $(".recipes")
 var recipeHead = $(".recipes-header")
 var navGainEl = $(".nav-gain")
 var statement = $(".statement")
-
-
+var loseSubmit = $(".btn-lose")
+var loseBmiEl = $(".lose-bmi")
+var loseWeightEl = $(".wei-input")
+var loseHeightEl = $(".hei-input")
+var loseAgeEl = $(".age-input")
+var loseNameEl = $(".name-input")
+var navLoseEl = $(".nav-lose")
 
 function gainBmi(event, age, weight, height) {
     event.preventDefault();
@@ -110,51 +111,9 @@ function gainRecipes() {
         statement.text("This mission is in YOUR hands")
 
     })
-
-
-
-
 }
 
-
-
-
-
-gainSubmit.on("click", function(event) {
-    event.preventDefault();
-    gainBmi(event, gainAgeEl.val().trim(), gainWeightEl.val().trim(), gainHeightEl.val().trim())
-    console.log(gainAgeEl.val())
-    console.log(gainWeightEl.val())
-    console.log(gainHeightEl.val())
-    gainRecipes()
-})
-
 diplayGainBmi();
-
-
-
-
-
-
-
-
-
-
-
-
-
-var loseHead = $(".lose-header")
-var loseInfo = $(".lose-info")
-var loseInput = $(".lose-input")
-var loseName = $(".lose-name")
-var loseSubmit = $(".btn-lose")
-var loseBmiEl = $(".lose-bmi")
-var loseWeightEl = $(".wei-input")
-var loseHeightEl = $(".hei-input")
-var loseAgeEl = $(".age-input")
-var loseNameEl = $(".name-input")
-var navLoseEl = $(".nav-lose")
-
 
 function loseBmi (event, age, weight, height) {
     event.preventDefault();
@@ -196,8 +155,7 @@ function loseBmi (event, age, weight, height) {
         }
         
         
-    })
-    
+    })  
 }
 
 function diplayLoseBmi() {
@@ -251,10 +209,19 @@ function loseRecipes() {
     })
 }        
 
+diplayLoseBmi();
+
+gainSubmit.on("click", function(event) {
+    event.preventDefault();
+    gainBmi(event, gainAgeEl.val().trim(), gainWeightEl.val().trim(), gainHeightEl.val().trim())
+    console.log(gainAgeEl.val())
+    console.log(gainWeightEl.val())
+    console.log(gainHeightEl.val())
+    gainRecipes()
+})
+
 loseSubmit.on("click", function(event) {
     event.preventDefault();
     loseBmi(event, loseAgeEl.val().trim(), loseWeightEl.val().trim(), loseHeightEl.val().trim())
     loseRecipes()
 })
-
-diplayLoseBmi();
