@@ -32,15 +32,6 @@ body {
     justify-content: space-around;
 }
 
-
-
-/*.lose {
-    position: relative;
-    top: -45px;
-}*/
-
-
-
 .buttons button {
     flex: 0 1 95%;
 }
@@ -61,37 +52,6 @@ img {
 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .title3{
     display: flex;
     justify-content: center;
@@ -104,7 +64,6 @@ btn{
     display: flex;
     justify-content: center;
 }
-
 
 .buttons button {
     flex: 0 1 95%;
