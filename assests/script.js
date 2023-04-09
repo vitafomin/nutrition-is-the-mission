@@ -62,7 +62,7 @@ function gainBmi(event, age, weight, height) {
 }
 
 function diplayGainBmi() {
-    var userArr = JSON.parse(localStorage.getItem("gainUsers"));
+    var userArr = JSON.parse(localStorage.getItem("gainUsers")) || [];
 
     navGainEl.empty();
 
@@ -159,7 +159,7 @@ function loseBmi (event, age, weight, height) {
 }
 
 function diplayLoseBmi() {
-    var userArr = JSON.parse(localStorage.getItem("loseUsers"));
+    var userArr = JSON.parse(localStorage.getItem("loseUsers")) || []cl;
 
     navLoseEl.empty();
 
