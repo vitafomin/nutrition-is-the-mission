@@ -60,10 +60,7 @@ img {
     color: white;
 }
 
-btn{
-    display: flex;
-    justify-content: center;
-}
+
 
 .buttons button {
     flex: 0 1 95%;
