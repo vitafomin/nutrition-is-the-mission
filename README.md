@@ -12,7 +12,7 @@ N/A
 ## Usage
 
 This application is a great tool for anyone! Whether you are trying to kick-start your fitness journey, or simply just want to learn more about your body. This application allows you to save your results, which could be very helpful to keep track of all the progress that you have made. If you just want you bmi results that is possible too. You can also explore the recipes that fit your nutritional goals, and this could help you get started towards your goal. 
-![project-1-screenshot1.png](./assests/project-1-screenshot1.png)
+![project-1-screenshot1.png](./img/project-1-screenshot1.png)
 https://vitafomin.github.io/nutrition-is-the-mission/
 
 
